@@ -44,12 +44,14 @@ hybrid cloud:
 	Organizations control security, compliance, or legal requirements
 
 Azure Arc
+
 	Azure Arc is a set of technologies that helps manage your cloud environment. 
  	Azure Arc can help manage your cloud environment, whether it's a public cloud solely on Azure,
   	a private cloud in your datacenter, a hybrid configuration, or even a multi-cloud environment
    	running on multiple cloud providers at once.
 
 Azure VMware Solution
+
 	What if you’re already established with VMware in a private cloud environment but want to migrate to a public or hybrid cloud? Azure VMware Solution lets you run your VMware workloads in Azure with seamless 		integration and scalability.
 
 Describe the consumption-based model:
@@ -74,46 +76,58 @@ Additional resources:
 	- https://learn.microsoft.com/en-us/azure/security/fundamentals/shared-responsibility
  	- https://learn.microsoft.com/en-us/learn/modules/intro-azure-vmware-solution/
   	- https://learn.microsoft.com/en-us/learn/modules/intro-to-azure-hybrid-services/
- 
-===================================================================================
-Describe the benefits of high availability and scalability in the cloud:
-===================================================================================
+
+##############################################################################
+## Describe the benefits of high availability and scalability in the cloud: ##
+##############################################################################
+
 High availability:
+
 When you’re deploying an application, a service, or any IT resources, it’s important the resources are available when needed. High availability focuses on ensuring maximum availability, regardless of disruptions or events that may occur.
 
 When you’re architecting your solution, you’ll need to account for service availability guarantees. Azure is a highly available cloud environment with uptime guarantees depending on the service. These guarantees are part of the service-level agreements (SLAs).
 
-NOTE: when designing a solution, familiarize yourself with AZURE SLA's, they determin eht ecost of your solution.
-====================================================================================
-Scalability:
+## NOTE: when designing a solution, familiarize yourself with AZURE SLA's, they determine the cost of your solution. ##
+
+#Scalability:
+
 Another major benefit of cloud computing is the scalability of cloud resources. Scalability refers to the ability to adjust resources to meet demand.
 
 Scaling generally comes in two varieties: vertical and horizontal. Vertical scaling is focused on increasing or decreasing the capabilities of resources. Horizontal scaling is adding or subtracting the number of resources.
 
-Vertical scaling
+#Vertical scaling
+
 With vertical scaling, if you were developing an app and you needed more processing power, you could vertically scale up to add more CPUs or RAM to the virtual machine. Conversely, if you realized you had over-specified the needs, you could vertically scale down by lowering the CPU or RAM specifications.
 
-Horizontal scaling
-With horizontal scaling, if you suddenly experienced a steep jump in demand, your deployed resources could be scaled out (either automatically or manually). For example, you could add additional virtual machines or containers, scaling out. In the same manner, if there was a significant drop in demand, deployed resources could be scaled in (either automatically or manually), scaling in.
-=================================================================================
-Describe the benefits of reliability and predictability in the cloud
-=================================================================================
+#Horizontal scaling
 
-Reliability
+With horizontal scaling, if you suddenly experienced a steep jump in demand, your deployed resources could be scaled out (either automatically or manually). For example, you could add additional virtual machines or containers, scaling out. In the same manner, if there was a significant drop in demand, deployed resources could be scaled in (either automatically or manually), scaling in.
+
+
+## Describe the benefits of reliability and predictability in the cloud
+
+#Reliability
 
 Reliability is the ability of a system to recover from failures and continue to function. It's also one of the pillars of the Microsoft Azure Well-Architected Framework.
 
-Predictability
+#Predictability
 
 Predictability can be focused on performance predictability or cost predictability. Both performance and cost predictability are heavily influenced by the Microsoft Azure Well-Architected Framework. Deploy a solution that’s built around this framework and you have a solution whose cost and performance are predictable.
 
-	Performance
+	# Performance
 	
-	Performance predictability focuses on predicting the resources needed to deliver a positive experience 	for your customers. Autoscaling, load balancing, and high availability are just some of the cloud 	concepts that support performance predictability
+	Performance predictability focuses on predicting the resources needed to deliver a positive experience 
+ 	for your customers. Autoscaling, load balancing, and high availability are just some of the cloud 
+  	concepts that support performance predictability
 
-	Cost
+	# Cost
 
-	Cost predictability is focused on predicting or forecasting the cost of the cloud spend. With the cloud, 	you can track your resource use in real time, monitor resources to ensure that you’re using them in the 	most efficient way, and apply data analytics to find patterns and trends that help better plan resource 	deployments. By operating in the cloud and using cloud analytics and information, you can predict future 	costs and adjust your resources as needed. You can even use tools like the Total Cost of Ownership (TCO) 	or Pricing Calculator to get an estimate of potential cloud spend.
+	Cost predictability is focused on predicting or forecasting the cost of the cloud spend. With the cloud, 
+ 	you can track your resource use in real time, monitor resources to ensure that you’re using them in the 
+  	most efficient way, and apply data analytics to find patterns and trends that help better plan resource 
+   	deployments. By operating in the cloud and using cloud analytics and information, you can predict future 
+    	costs and adjust your resources as needed. You can even use tools like the Total Cost of Ownership (TCO) 
+     	or Pricing Calculator to get an estimate of potential cloud spend.
 
 Describe the benefits of security and governance in the cloud
 =============================================================
