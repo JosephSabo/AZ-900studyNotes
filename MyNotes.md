@@ -24,37 +24,40 @@ Your service model will determine responsibility for things like:
 	Identity and infrastructure
 
 Public cloud:
-No capital expenditures to scale up
-Applications can be quickly provisioned and deprovisioned
-Organizations pay only for what they use
-Organizations don’t have complete control over resources and security
+	No capital expenditures to scale up
+	Applications can be quickly provisioned and deprovisioned
+	Organizations pay only for what they use
+	Organizations don’t have complete control over resources and security
 
 private cloud:
-Organizations have complete control over resources and security
-Data is not collocated with other organizations’ data
-Hardware must be purchased for startup and maintenance
-Organizations are responsible for hardware maintenance and updates
+	Organizations have complete control over resources and security
+	Data is not collocated with other organizations’ data
+	Hardware must be purchased for startup and maintenance
+	Organizations are responsible for hardware maintenance and updates
 
 hybrid cloud:
-Provides the most flexibility
-Organizations determine where to run their applications
-Organizations control security, compliance, or legal requirements
+	Provides the most flexibility
+	Organizations determine where to run their applications
+	Organizations control security, compliance, or legal requirements
 
 Azure Arc
-Azure Arc is a set of technologies that helps manage your cloud environment. Azure Arc can help manage your cloud environment, whether it's a public cloud solely on Azure, a private cloud in your datacenter, a hybrid configuration, or even a multi-cloud environment running on multiple cloud providers at once.
+	Azure Arc is a set of technologies that helps manage your cloud environment. 
+ 	Azure Arc can help manage your cloud environment, whether it's a public cloud solely on Azure,
+  	a private cloud in your datacenter, a hybrid configuration, or even a multi-cloud environment
+   	running on multiple cloud providers at once.
 
 Azure VMware Solution
 What if you’re already established with VMware in a private cloud environment but want to migrate to a public or hybrid cloud? Azure VMware Solution lets you run your VMware workloads in Azure with seamless integration and scalability.
 
 Describe the consumption-based model:
 
-When comparing IT infrastructure models, there are two types of expenses to consider. Capital expenditure (CapEx) and operational expenditure (OpEx).
-
-CapEx is typically a one-time, up-front expenditure to purchase or secure tangible resources. A new building, repaving the parking lot, building a datacenter, or buying a company vehicle are examples of CapEx.
-
-OpEx is spending money on services or products over time. Renting a convention center, leasing a company vehicle, or signing up for cloud services are all examples of OpEx.
-
-Cloud computing falls under OpEx because cloud computing operates on a consumption-based model. 
+	When comparing IT infrastructure models, there are two types of expenses to consider. Capital expenditure (CapEx) and operational expenditure (OpEx).
+	
+ 		CapEx is typically a one-time, up-front expenditure to purchase or secure tangible resources. A new building, repaving the parking lot, building a datacenter, or buying a company vehicle are examples of 		CapEx.
+	
+ 		OpEx is spending money on services or products over time. Renting a convention center, leasing a company vehicle, or signing up for cloud services are all examples of OpEx.
+	
+ 		Cloud computing falls under OpEx because cloud computing operates on a consumption-based model. 
 
 This consumption-based model has many benefits, including:
 
@@ -64,9 +67,10 @@ This consumption-based model has many benefits, including:
 	The ability to stop paying for resources that are no longer needed.
 
 Additional resources:
-https://learn.microsoft.com/en-us/azure/security/fundamentals/shared-responsibility
-https://learn.microsoft.com/en-us/learn/modules/intro-azure-vmware-solution/
-https://learn.microsoft.com/en-us/learn/modules/intro-to-azure-hybrid-services/
+	https://learn.microsoft.com/en-us/azure/security/fundamentals/shared-responsibility
+	https://learn.microsoft.com/en-us/learn/modules/intro-azure-vmware-solution/
+	https://learn.microsoft.com/en-us/learn/modules/intro-to-azure-hybrid-services/
+ 
 ===================================================================================
 Describe the benefits of high availability and scalability in the cloud:
 ===================================================================================
