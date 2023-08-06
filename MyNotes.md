@@ -24,18 +24,21 @@ Your service model will determine responsibility for things like:
 	Identity and infrastructure
 
 Public cloud:
+
 	No capital expenditures to scale up
 	Applications can be quickly provisioned and deprovisioned
 	Organizations pay only for what they use
 	Organizations don’t have complete control over resources and security
 
 private cloud:
+
 	Organizations have complete control over resources and security
 	Data is not collocated with other organizations’ data
 	Hardware must be purchased for startup and maintenance
 	Organizations are responsible for hardware maintenance and updates
 
 hybrid cloud:
+
 	Provides the most flexibility
 	Organizations determine where to run their applications
 	Organizations control security, compliance, or legal requirements
@@ -67,9 +70,10 @@ This consumption-based model has many benefits, including:
 	The ability to stop paying for resources that are no longer needed.
 
 Additional resources:
+
 	- https://learn.microsoft.com/en-us/azure/security/fundamentals/shared-responsibility
-	- https://learn.microsoft.com/en-us/learn/modules/intro-azure-vmware-solution/
-	- https://learn.microsoft.com/en-us/learn/modules/intro-to-azure-hybrid-services/
+ 	- https://learn.microsoft.com/en-us/learn/modules/intro-azure-vmware-solution/
+  	- https://learn.microsoft.com/en-us/learn/modules/intro-to-azure-hybrid-services/
  
 ===================================================================================
 Describe the benefits of high availability and scalability in the cloud:
