@@ -1,5 +1,5 @@
 #######################################################################
-## Microsoft Azure Fundamentals: Describe cloud concepts ( MODULE 1) ##
+#  Microsoft Azure Fundamentals: Describe cloud concepts ( MODULE 1)  #
 #######################################################################
 
 With an on-premises datacenter, you’re responsible for everything. With cloud computing, those responsibilities shift. The shared responsibility model is heavily tied into the cloud service types (covered later in this learning path): infrastructure as a service (IaaS), platform as a service (PaaS), and software as a service (SaaS). IaaS places the most responsibility on the consumer, with the cloud provider being responsible for the basics of physical security, power, and connectivity. On the other end of the spectrum, SaaS places most of the responsibility with the cloud provider. PaaS, being a middle ground between IaaS and SaaS, rests somewhere in the middle and evenly distributes responsibility between the cloud provider and the consumer.
@@ -229,5 +229,131 @@ Some common scenarios for SaaS are:
 
 
 #############################################################################
-## Azure Fundamentals: Describe Azure architecture and services (MODULE 2) ##
+#  Azure Fundamentals: Describe Azure architecture and services (MODULE 2)  #
 #############################################################################
+
+## Describe the core architectural components of Azure ##
+
+
+### What does Azure offer? ###
+
+	Be ready for the future:
+ 
+	Continuous innovation from Microsoft supports your development today and your product visions for 
+	tomorrow.
+ 
+	Build on your terms:
+ 
+	You have choices. With a commitment to open source, and support for all languages and frameworks,
+	you can build how you want and deploy where you want.
+ 
+	Operate hybrid seamlessly:
+ 
+	On-premises, in the cloud, and at the edge, we'll meet you where you are. Integrate and manage your
+	environments with tools and services designed for a hybrid cloud solution.
+ 
+	Trust your cloud:
+ 
+	Get security from the ground up, backed by a team of experts, and proactive compliance trusted by 
+	enterprises, governments, and startups.
+
+## Get started with Azure accounts ##
+
+to startusing Azure you need to open an Azure Account.
+Once you have an account, you can create 1 or more subscriptions under that account.
+
+Example: your company can use 1 account for its needs but open several subscriptions and 
+use 1 for marketing, one for finance and one for HR. Once you have subscriptions, you can start creating the various resources you need under that subscription.
+
+1) AZURE ACCOUNTANT
+2) AZURE SUBSCRIPTION
+3) AZURE RESOURCE GROUPS
+4) AZURE RESOURCES within the resource groups
+
+## Physical infrastructure ##
+
+In Azure, a physical infrastructure is a datacenter, just like in your companies datacenter.
+In Azure, each datacenter is grouped into availability zones or regional zones. so in one zone or region
+you can have multiple datacenters, giving the consumer more resiliency and reliability for thier business-critical workloads.
+
+	Regions
+
+	A region is a geographical area on the planet that contains at least one, but potentially multiple 
+	datacenters that are nearby and networked together with a low-latency network.
+
+	Availability Zones
+
+	Availability zones are physically separate datacenters within an Azure region. Each availability zone is
+	 made up of one or more datacenters equipped with independent power, cooling, and networking. An 
+	availability zone is set up to be an isolation boundary. If one zone goes down, the other continues 
+	working. Availability zones are connected through high-speed, private fiber-optic networks.
+
+## Use availability zones in your apps ##
+
+Availability zones are primarily for VMs, managed disks, load balancers, and SQL databases. Azure services that support availability zones fall into three categories:
+
+	Zonal services: You pin the resource to a specific zone (for example, VMs, managed disks, IP addresses).
+
+	Zone-redundant services: The platform replicates automatically across zones (for example, zone-redundant 
+	storage, SQL Database).
+
+	Non-regional services: Services are always available from Azure geographies and are resilient to zone-
+	wide outages as well as region-wide outages.
+
+ ## Region Pairs ##
+
+	Most Azure regions are paired with another region within the same geography (such as US, Europe, or Asia) at least 300 miles away. 
+ 	This approach allows for the replication of resources across a geography that helps reduce the likelihood of interruptions because 
+  	of events such as natural disasters, civil unrest, power outages, or physical network outages that affect an entire region. For example,
+   	if a region in a pair was affected by a natural disaster, services would automatically fail over to the other region in its region pair.
+
+		Examples of region pairs in Azure are:
+
+		West US paired with East US
+
+		South-East Asia paired with East Asia.
+
+		Because the pair of regions are directly connected and far enough apart to be isolated from regional disasters, you can use them to provide reliable services and data redundancy.
+
+Additional advantages of region pairs:
+
+	- If an extensive Azure outage occurs, one region out of every pair is prioritized to make sure at least one is restored as quickly as possible for applications hosted in that region pair.
+	- Planned Azure updates are rolled out to paired regions one region at a time to minimize downtime and risk of application outage.
+	- Data continues to reside within the same geography as its pair (except for Brazil South) for tax- and law-enforcement jurisdiction purposes.
+
+## Sovereign Regions ##
+
+Sovereign regions are instances of Azure that are isolated from the main instance of Azure. You may need to use a sovereign region for compliance or legal purposes.
+
+Azure sovereign regions include:
+
+	- US DoD Central, US Gov Virginia, US Gov Iowa and more: These regions are physical and logical network-isolated instances of Azure for U.S. government agencies and partners.
+ 	  These datacenters are operated by screened U.S. personnel and include additional compliance certifications.
+   
+	- China East, China North, and more: These regions are available through a unique partnership between Microsoft and 21Vianet, whereby Microsoft doesn't directly maintain the datacenters.
+
+# Describe Azure management infrastructure #
+
+The management infrastructure includes Azure resources and resource groups, subscriptions, and accounts.
+
+### Azure resources and resource groups ###
+
+A resource is the basic building block of Azure. Anything you create, provision, deploy, etc. is a resource. Virtual Machines (VMs), virtual networks, databases,
+cognitive services, etc. are all considered resources within Azure.
+
+Resource groups are simply groupings of resources. When you create a resource, you’re required to place it into a resource group. While a resource group can contain many resources, a single resource can only be in one resource group at a time.
+
+While a resource group can contain many resources, a single resource can only be in one resource group at a time.
+
+Some resources may be moved between resource groups, but when you move a resource to a new group, it will no longer be associated with the former group.
+
+Additionally, resource groups can't be nested, meaning you can’t put resource group B inside of resource group A.
+
+When you apply an action to a resource group, that action will apply to all the resources within the resource group.
+
+If you delete a resource group, all the resources will be deleted.
+
+If you grant or deny access to a resource group, you’ve granted or denied access to all the resources within the resource group.
+
+## Azure subscriptions ##
+
