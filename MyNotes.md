@@ -112,8 +112,7 @@ Predictability can be focused on performance predictability or cost predictabili
     	costs and adjust your resources as needed. You can even use tools like the Total Cost of Ownership (TCO) 
      	or Pricing Calculator to get an estimate of potential cloud spend.
 
-Describe the benefits of security and governance in the cloud
-=============================================================
+### Describe the benefits of security and governance in the cloud
 
 Whether you’re deploying infrastructure as a service or software as a service, cloud features support governance and compliance. Things like set templates help ensure that all your deployed resources meet corporate standards and government regulatory requirements.
 
@@ -123,43 +122,32 @@ Whether you’re deploying infrastructure as a service or software as a service,
 
 On the security side, you can find a cloud solution that matches your security needs.
 
-Describe the benefits of manageability in the cloud
-===================================================
+### Describe the benefits of manageability in the cloud
 
 A major benefit of cloud computing is the manageability options. There are two types of manageability for cloud computing that you’ll learn about in this series, and both are excellent benefits.
 
-	Management of the cloud
-	-----------------------
+  - Management of the cloud speaks to managing your cloud resources. In the cloud, you can:
+    - Automatically scale resource deployment based on need.
+    - Deploy resources based on a preconfigured template, removing the need for manual configuration.
+    - Monitor the health of resources and automatically replace failing resources.
+    - Receive automatic alerts based on configured metrics, so you’re aware of performance in real time.
 
-	Management of the cloud speaks to managing your cloud resources. In the cloud, you can:
+  - Management in the cloud speaks to how you’re able to manage your cloud environment and resources. You can 	manage these:
+    - Through a web portal.
+    - Using a command line interface.
+    - Using APIs.
+    - Using PowerShell.
 
-	-Automatically scale resource deployment based on need.
-	-Deploy resources based on a preconfigured template, removing the need for manual configuration.
-	-Monitor the health of resources and automatically replace failing resources.
-	-Receive automatic alerts based on configured metrics, so you’re aware of performance in real time.
-
-	Management in the cloud
-	-----------------------
-
-	Management in the cloud speaks to how you’re able to manage your cloud environment and resources. You can 	manage these:
-
-	-Through a web portal.
-	-Using a command line interface.
-	-Using APIs.
-	-Using PowerShell.
-
-Describe Infrastructure as a Service (IaaS)
-===========================================
+### Describe Infrastructure as a Service (IaaS)
 
 Infrastructure as a service (IaaS) is the most flexible category of cloud services, as it provides you the maximum amount of control for your cloud resources. In an IaaS model, the cloud provider is responsible for maintaining the hardware, network connectivity (to the internet), and physical security. You’re responsible for everything else: operating system installation, configuration, and maintenance; network configuration; database and storage configuration; and so on. With IaaS, you’re essentially renting the hardware in a cloud datacenter, but what you do with that hardware is up to you.
 
-Shared responsibility model
----------------------------
+#### Shared responsibility model
 
 IaaS places the largest share of responsibility with you. The cloud provider is responsible for maintaining the physical infrastructure and its access to the internet. You’re responsible for installation and configuration, patching and updates, and security.
 
-Scenarios
----------
+##### Scenarios
+
 Some common scenarios where IaaS might make sense include:
 
 1) Lift-and-shift migration: You’re standing up cloud resources similar to your on-prem datacenter, and then simply moving the things running on-prem to running on the IaaS infrastructure.
