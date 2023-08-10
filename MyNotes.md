@@ -1,6 +1,5 @@
 #  Microsoft Azure Fundamentals: Describe cloud concepts ( MODULE 1)  #
 
-
 With an on-premises datacenter, you’re responsible for everything. With cloud computing, those responsibilities shift. The shared responsibility model is heavily tied into the cloud service types (covered later in this learning path): infrastructure as a service (IaaS), platform as a service (PaaS), and software as a service (SaaS). IaaS places the most responsibility on the consumer, with the cloud provider being responsible for the basics of physical security, power, and connectivity. On the other end of the spectrum, SaaS places most of the responsibility with the cloud provider. PaaS, being a middle ground between IaaS and SaaS, rests somewhere in the middle and evenly distributes responsibility between the cloud provider and the consumer.
 
 #### You’ll always be responsible for:
@@ -154,22 +153,20 @@ Some common scenarios where IaaS might make sense include:
 
 2) Testing and development: You have established configurations for development and test environments that you need to rapidly replicate. You can stand up or shut down the different environments rapidly with an IaaS structure, while maintaining complete control.
 
-Describe Platform as a Service (PaaS)
-=====================================
+### Describe Platform as a Service (PaaS)
 
 Platform as a service (PaaS) is a middle ground between renting space in a datacenter (infrastructure as a service) and paying for a complete and deployed solution (software as a service). In a PaaS environment, the cloud provider maintains the physical infrastructure, physical security, and connection to the internet. They also maintain the operating systems, middleware, development tools, and business intelligence services that make up a cloud solution. In a PaaS scenario, you don't have to worry about the licensing or patching for operating systems and databases.
 
 PaaS is well suited to provide a complete development environment without the headache of maintaining all the development infrastructure.
 
-Shared responsibility model
----------------------------
+#### Shared responsibility model
+
 
 PaaS splits the responsibility between you and the cloud provider. The cloud provider is responsible for maintaining the physical infrastructure and its access to the internet, just like in IaaS. In the PaaS model, the cloud provider will also maintain the operating systems, databases, and development tools. Think of PaaS like using a domain joined machine: IT maintains the device with regular updates, patches, and refreshes.
 
 Depending on the configuration, you or the cloud provider may be responsible for networking settings and connectivity within your cloud environment, network and application security, and the directory infrastructure.
 
-Scenarios
----------
+#### Scenarios
 
 Some common scenarios where PaaS might make sense include:
 
@@ -177,20 +174,17 @@ Some common scenarios where PaaS might make sense include:
 
 2) Analytics or business intelligence: Tools provided as a service with PaaS allow organizations to analyze and mine their data, finding insights and patterns and predicting outcomes to improve forecasting, product design decisions, investment returns, and other business decisions.
 
-Describe Software as a Service (SaaS)
-=====================================
+### Describe Software as a Service (SaaS)
 
 Software as a service (SaaS) is the most complete cloud service model from a product perspective. With SaaS, you’re essentially renting or using a fully developed application. Email, financial software, messaging applications, and connectivity software are all common examples of a SaaS implementation.
 
 While the SaaS model may be the least flexible, it’s also the easiest to get up and running. It requires the least amount of technical knowledge or expertise to fully employ.
 
-Shared responsibility model
----------------------------
+#### Shared responsibility model
 
 SaaS is the model that places the most responsibility with the cloud provider and the least responsibility with the user. In a SaaS environment you’re responsible for the data that you put into the system, the devices that you allow to connect to the system, and the users that have access. Nearly everything else falls to the cloud provider. The cloud provider is responsible for physical security of the datacenters, power, network connectivity, and application development and patching.
 
-Scenarios
----------
+#### Scenarios
 
 Some common scenarios for SaaS are:
 
@@ -199,36 +193,34 @@ Some common scenarios for SaaS are:
 -Finance and expense tracking.
 
 
-#############################################################################
-#  Azure Fundamentals: Describe Azure architecture and services (MODULE 2)  #
-#############################################################################
+#  Azure Fundamentals: Describe Azure architecture and services (MODULE 2)
 
 ## Describe the core architectural components of Azure ##
 
 
-### What does Azure offer? ###
+### What does Azure offer?
 
-	Be ready for the future:
+#### Be ready for the future:
  
-	Continuous innovation from Microsoft supports your development today and your product visions for 
+ - Continuous innovation from Microsoft supports your development today and your product visions for 
 	tomorrow.
  
-	Build on your terms:
+#### Build on your terms:
  
-	You have choices. With a commitment to open source, and support for all languages and frameworks,
+- You have choices. With a commitment to open source, and support for all languages and frameworks,
 	you can build how you want and deploy where you want.
  
-	Operate hybrid seamlessly:
+#### Operate hybrid seamlessly:
  
-	On-premises, in the cloud, and at the edge, we'll meet you where you are. Integrate and manage your
+- On-premises, in the cloud, and at the edge, we'll meet you where you are. Integrate and manage your
 	environments with tools and services designed for a hybrid cloud solution.
  
-	Trust your cloud:
+#### Trust your cloud:
  
-	Get security from the ground up, backed by a team of experts, and proactive compliance trusted by 
+- Get security from the ground up, backed by a team of experts, and proactive compliance trusted by 
 	enterprises, governments, and startups.
 
-## Get started with Azure accounts ##
+### Get started with Azure accounts
 
 to startusing Azure you need to open an Azure Account.
 Once you have an account, you can create 1 or more subscriptions under that account.
@@ -241,34 +233,30 @@ use 1 for marketing, one for finance and one for HR. Once you have subscriptions
 3) AZURE RESOURCE GROUPS
 4) AZURE RESOURCES within the resource groups
 
-## Physical infrastructure ##
+### Physical infrastructure ##
 
 In Azure, a physical infrastructure is a datacenter, just like in your companies datacenter.
 In Azure, each datacenter is grouped into availability zones or regional zones. so in one zone or region
 you can have multiple datacenters, giving the consumer more resiliency and reliability for thier business-critical workloads.
 
-	Regions
-
-	A region is a geographical area on the planet that contains at least one, but potentially multiple 
+- A region is a geographical area on the planet that contains at least one, but potentially multiple 
 	datacenters that are nearby and networked together with a low-latency network.
 
-	Availability Zones
-
-	Availability zones are physically separate datacenters within an Azure region. Each availability zone is
+- Availability zones are physically separate datacenters within an Azure region. Each availability zone is
 	 made up of one or more datacenters equipped with independent power, cooling, and networking. An 
 	availability zone is set up to be an isolation boundary. If one zone goes down, the other continues 
 	working. Availability zones are connected through high-speed, private fiber-optic networks.
 
-## Use availability zones in your apps ##
+### Use availability zones in your apps ##
 
 Availability zones are primarily for VMs, managed disks, load balancers, and SQL databases. Azure services that support availability zones fall into three categories:
 
-	Zonal services: You pin the resource to a specific zone (for example, VMs, managed disks, IP addresses).
+- Zonal services: You pin the resource to a specific zone (for example, VMs, managed disks, IP addresses).
 
-	Zone-redundant services: The platform replicates automatically across zones (for example, zone-redundant 
+- Zone-redundant services: The platform replicates automatically across zones (for example, zone-redundant 
 	storage, SQL Database).
 
-	Non-regional services: Services are always available from Azure geographies and are resilient to zone-
+- Non-regional services: Services are always available from Azure geographies and are resilient to zone-
 	wide outages as well as region-wide outages.
 
  ## Region Pairs ##
@@ -397,4 +385,32 @@ Examples of types of Management groups:
 - A management group tree can support up to six levels of depth. This limit doesn't include the root level or the subscription level.
 - Each management group and subscription can support only one parent.
 
+## Describe Azure virtual machines
+
+- With Azure Virtual Machines (VMs), you can create and use VMs in the cloud.
+- VMs provide infrastructure as a service (IaaS) in the form of a virtualized server and can be used in many ways. Just like a physical computer, you can customize all of the software running on your VM.
+- VMs are an ideal choice when you need:
+  - Total control over the operating system (OS).
+  - The ability to run custom software.
+  - To use custom hosting configurations.
+
+### Virtual machine availability sets
+Availability sets are designed to ensure that VMs stagger updates and have varied power and network connectivity, preventing you from losing all your VMs with a single network or power failure.
+
+#### Availability sets do this by grouping VMs in two ways: UPDATE DOMAIN and FAULT DOMAIN
+
+- The update domain groups VMs that can be rebooted at the same time. This allows you to apply updates while knowing that only one update domain grouping will be offline at a time. All of the machines in one update domain will be updated. An update group going through the update process is given a 30-minute time to recover before maintenance on the next update domain starts.
+- The fault domain groups your VMs by common power source and network switch. By default, an availability set will split your VMs across up to three fault domains. This helps protect against a physical power or networking failure by having VMs in different fault domains (thus being connected to different power and networking resources).
+
+### Examples of when to use VMs
+
+- During testing and development. VMs provide a quick and easy way to create different OS and application configurations. Test and development personnel can then easily delete the VMs when they no longer need them.
+- When running applications in the cloud. The ability to run certain applications in the public cloud as opposed to creating a traditional infrastructure to run them can provide substantial economic benefits. For example, an application might need to handle fluctuations in demand. Shutting down VMs when you don't need them or quickly starting them up to meet a sudden increase in demand means you pay only for the resources you use.
+- When extending your datacenter to the cloud: An organization can extend the capabilities of its own on-premises network by creating a virtual network in Azure and adding VMs to that virtual network. Applications like SharePoint can then run on an Azure VM instead of running locally. This arrangement makes it easier or less expensive to deploy than in an on-premises environment.
+- During disaster recovery: As with running certain types of applications in the cloud and extending an on-premises network to the cloud, you can get significant cost savings by using an IaaS-based approach to disaster recovery. If a primary datacenter fails, you can create VMs running on Azure to run your critical applications and then shut them down when the primary datacenter becomes operational again.
+
+### VM Resources
+- Size (purpose, number of processor cores, and amount of RAM)
+- Storage disks (hard disk drives, solid state drives, etc.)
+- Networking (virtual network, public IP address, and port configuration)
 
