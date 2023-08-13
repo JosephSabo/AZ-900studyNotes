@@ -362,7 +362,7 @@ Similar to using resource groups to separate resources by function or access, yo
 - Because costs are first aggregated at the subscription level, you might want to create subscriptions to manage and track costs based on your needs.
 - For instance, you might want to create one subscription for your production workloads and another subscription for your development and testing workloads.
 
-## Azure management groups ##
+### Azure management groups ##
 
 - Azure management groups provide a level of scope above subscriptions.
 - You organize subscriptions into containers called management groups and apply governance conditions to the management groups
@@ -385,7 +385,7 @@ Examples of types of Management groups:
 - A management group tree can support up to six levels of depth. This limit doesn't include the root level or the subscription level.
 - Each management group and subscription can support only one parent.
 
-## Describe Azure virtual machines
+### Describe Azure virtual machines
 
 - With Azure Virtual Machines (VMs), you can create and use VMs in the cloud.
 - VMs provide infrastructure as a service (IaaS) in the form of a virtualized server and can be used in many ways. Just like a physical computer, you can customize all of the software running on your VM.
@@ -535,5 +535,29 @@ Availability sets are designed to ensure that VMs stagger updates and have varie
 - Azure virtual networks enable you to link resources together in your on-premises environment and within your Azure subscription.
 - There are three mechanisms for you to achieve this connectivity:
   - Point-to-site virtual private network connections are from a computer outside your organization back into your corporate network. In this case, the client computer initiates an encrypted VPN connection to connect to the Azure virtual network.
-  - 
+  - Site-to-site virtual private networks link your on-premises VPN device or gateway to the Azure VPN gateway in a virtual network. In effect, the devices in Azure can appear as being on the local network. The connection is encrypted and works over the internet.
+  - Azure ExpressRoute provides a dedicated private connectivity to Azure that doesn't travel over the internet. ExpressRoute is useful for environments where you need greater bandwidth and even higher levels of security.
+
+#### Route network traffic
+- By default, Azure routes traffic between subnets on any connected virtual networks, on-premises networks, and the internet.
+- You also can control routing and override those settings, as follows:
+  - Route tables allow you to define rules about how traffic should be directed. You can create custom route tables that control how packets are routed between subnets.
+  - Border Gateway Protocol (BGP) works with Azure VPN gateways, Azure Route Server, or Azure ExpressRoute to propagate on-premises BGP routes to Azure virtual networks.
+
+#### Filter network traffic
+- Azure virtual networks enable you to filter traffic between subnets by using the following approaches:
+  - Network security groups are Azure resources that can contain multiple inbound and outbound security rules. You can define these rules to allow or block traffic, based on factors such as source and destination IP address, port, and protocol.
+  - Network virtual appliances are specialized VMs that can be compared to a hardened network appliance. A network virtual appliance carries out a particular network function, such as running a firewall or performing wide area network (WAN) optimization.
+
+#### Connect virtual networks
+- You can link virtual networks together by using virtual network peering.
+- Peering allows two virtual networks to connect directly to each other.
+- Network traffic between peered networks is private, and travels on the Microsoft backbone network, never entering the public internet.
+- Peering enables resources in each virtual network to communicate with each other.
+- These virtual networks can be in separate regions, which allows you to create a global interconnected network through Azure.
+- User-defined routes (UDR) allow you to control the routing tables between subnets within a virtual network or between virtual networks. This allows for greater control over network traffic flow.
+
+
+
+
 
