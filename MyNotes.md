@@ -414,3 +414,45 @@ Availability sets are designed to ensure that VMs stagger updates and have varie
 - Storage disks (hard disk drives, solid state drives, etc.)
 - Networking (virtual network, public IP address, and port configuration)
 
+### Describe Azure Containers
+
+- Containers are a virtualization environment.
+- Much like running multiple virtual machines on a single physical host, you can run multiple containers on a single physical or virtual host.
+- Unlike virtual machines, you don't manage the operating system for a container.
+- Containers are lightweight and designed to be created, scaled out, and stopped dynamically.
+- It's possible to create and deploy virtual machines as application demand increases, but containers are a lighter weight, more agile method.
+- Containers are designed to allow you to respond to changes on demand.
+- With containers, you can quickly restart if there's a crash or hardware interruption.
+- One of the most popular container engines is Docker, and Azure supports Docker.
+
+#### Azure Container Instances
+- Azure Container Instances offer the fastest and simplest way to run a container in Azure; without having to manage any virtual machines or adopt any additional services.
+- Azure Container Instances are a platform as a service (PaaS) offering.
+- Azure Container Instances allow you to upload your containers and then the service will run the containers for you.
+
+#### Azure Container Apps
+- Azure Container Apps are similar in many ways to a container instance.
+- They allow you to get up and running right away, they remove the container management piece, and they're a PaaS offering.
+- Container Apps have extra benefits such as the ability to incorporate load balancing and scaling.
+
+#### Azure Kubernetes Service
+- Azure Kubernetes Service (AKS) is a container orchestration service.
+- An orchestration service manages the lifecycle of containers.
+- When you're deploying a fleet of containers, AKS can make fleet management simpler and more efficient.
+
+#### Use containers in your solutions
+- Containers are often used to create solutions by using a microservice architecture. This architecture is where you break solutions into smaller, independent pieces. For example, you might split a website into a container hosting your front end, another hosting your back end, and a third for storage. This split allows you to separate portions of your app into logical sections that can be maintained, scaled, or updated independently.
+- Imagine your website back-end has reached capacity but the front end and storage aren't being stressed. With containers, you could scale the back end separately to improve performance. If something necessitated such a change, you could also choose to change the storage service or modify the front end without impacting any of the other components.
+
+### Describe Azure Functions
+	Azure Functions is an event-driven, serverless compute option that doesn’t require maintaining virtual machines or containers. If you build an app using VMs or containers, those resources have to be “running” in order for your app to function. With Azure Functions, an event wakes the function, alleviating the need to keep resources provisioned when there are no events.
+
+#### Benefits of Azure Functions
+- Using Azure Functions is ideal when you're only concerned about the code running your service and not about the underlying platform or infrastructure. Functions are commonly used when you need to perform work in response to an event (often via a REST request), timer, or message from another Azure service, and when that work can be completed quickly, within seconds or less.
+- Functions scale automatically based on demand, so they may be a good choice when demand is variable.
+- Azure Functions runs your code when it's triggered and automatically deallocates resources when the function is finished. In this model, you're only charged for the CPU time used while your function runs.
+- Functions can be either stateless or stateful. When they're stateless (the default), they behave as if they're restarted every time they respond to an event. When they're stateful (called Durable Functions), a context is passed through the function to track prior activity.
+- Functions are a key component of serverless computing. They're also a general compute platform for running any type of code. If the needs of the developer's app change, you can deploy the project in an environment that isn't serverless. This flexibility allows you to manage scaling, run on virtual networks, and even completely isolate the functions.
+
+
+
