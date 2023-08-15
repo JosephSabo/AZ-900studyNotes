@@ -714,4 +714,78 @@ The following table shows the endpoint format for Azure Storage services:
 ![image](https://github.com/JosephSabo/AZ-900studyNotes/assets/47758130/c0035a70-f3b0-47ab-b470-63d734013a84)
 
 ### Describe Azure storage redundancy
+Azure Storage always stores multiple copies of your data so that it's protected from planned and unplanned events such as transient hardware failures, network or power outages, and natural disasters. Redundancy ensures that your storage account meets its availability and durability targets even in the face of failures.
+
+When deciding which redundancy option is best for your scenario, consider the tradeoffs between lower costs and higher availability. The factors that help determine which redundancy option you should choose include:
+
+- How your data is replicated in the primary region.
+- Whether your data is replicated to a second region that is geographically distant to the primary region, to protect against regional disasters.
+- Whether your application requires read access to the replicated data in the secondary region if the primary region becomes unavailable.
+
+#### Redundancy in the primary region
+Data in an Azure Storage account is always replicated three times in the primary region. 
+Azure Storage offers two options for how your data is replicated in the primary region:
+- locally redundant storage (LRS)
+- zone-redundant storage (ZRS).
+
+##### Locally redundant storage
+
+![image](https://github.com/JosephSabo/AZ-900studyNotes/assets/47758130/b8c19205-afdf-4964-b689-13890731be84)
+
+- Locally redundant storage (LRS) replicates your data three times within a single data center in the primary region.
+- LRS provides at least 11 nines of durability (99.999999999%) of objects over a given year.
+- LRS is the lowest-cost redundancy option and offers the least durability compared to other options.
+- LRS protects your data against server rack and drive failures.
+##### (However, if a disaster such as fire or flooding occurs within the data center, all replicas of a storage account using LRS may be lost or unrecoverable. To mitigate this risk, Microsoft recommends using zone-redundant storage (ZRS), geo-redundant storage (GRS), or geo-zone-redundant storage (GZRS).)
+
+##### Zone-redundant storage
+
+![image](https://github.com/JosephSabo/AZ-900studyNotes/assets/47758130/3ad2d2e7-fdc5-4052-aef7-db7c5797047a)
+
+- For Availability Zone-enabled Regions, zone-redundant storage (ZRS) replicates your Azure Storage data synchronously across three Azure availability zones in the primary region.
+- ZRS offers durability for Azure Storage data objects of at least 12 nines (99.9999999999%) over a given year.
+- With ZRS, your data is still accessible for both read and write operations even if a zone becomes unavailable.
+- No remounting of Azure file shares from the connected clients is required.
+- If a zone becomes unavailable, Azure undertakes networking updates, such as DNS repointing.
+- These updates may affect your application if you access data before the updates have completed.
+- ##### Microsoft recommends using ZRS in the primary region for scenarios that require high availability. ZRS is also recommended for restricting replication of data within a country or region to meet data governance requirements.
+
+#### Redundancy in a secondary region
+- For applications requiring high durability, you can choose to additionally copy the data in your storage account to a secondary region that is hundreds of miles away from the primary region. If the data in your storage account is copied to a secondary region, then your data is durable even in the event of a catastrophic failure that prevents the data in the primary region from being recovered.
+
+- When you create a storage account, you select the primary region for the account. The paired secondary region is based on Azure Region Pairs, and can't be changed.
+
+- Azure Storage offers two options for copying your data to a secondary region: geo-redundant storage (GRS) and geo-zone-redundant storage (GZRS). GRS is similar to running LRS in two regions, and GZRS is similar to running ZRS in the primary region and LRS in the secondary region.
+
+- By default, data in the secondary region isn't available for read or write access unless there's a failover to the secondary region. If the primary region becomes unavailable, you can choose to fail over to the secondary region. After the failover has completed, the secondary region becomes the primary region, and you can again read and write data.
+
+##### Geo-redundant storage
+
+![image](https://github.com/JosephSabo/AZ-900studyNotes/assets/47758130/dbedd79d-a979-4701-b4d8-00c6c6310171)
+
+- GRS copies your data synchronously three times within a single physical location in the primary region using LRS.
+- It then copies your data asynchronously to a single physical location in the secondary region (the region pair) using LRS.
+- GRS offers durability for Azure Storage data objects of at least 16 nines (99.99999999999999%) over a given year.
+
+##### Geo-zone-redundant storage
+
+![image](https://github.com/JosephSabo/AZ-900studyNotes/assets/47758130/e6095f36-36b1-47d2-9b9e-11fe14ca2c80)
+
+- GZRS combines the high availability provided by redundancy across availability zones with protection from regional outages provided by geo-replication.
+- Data in a GZRS storage account is copied across three Azure availability zones in the primary region (similar to ZRS) and is also replicated to a secondary geographic region, using LRS, for protection from regional disasters.
+- Microsoft recommends using GZRS for applications requiring maximum consistency, durability, and availability, excellent performance, and resilience for disaster recovery.
+- GZRS is designed to provide at least 16 nines (99.99999999999999%) of durability of objects over a given year.
+
+### Describe Azure storage services
+The Azure Storage platform includes the following data services:
+
+- Azure Blobs: A massively scalable object store for text and binary data. Also includes support for big data analytics through Data Lake Storage Gen2.
+- Azure Files: Managed file shares for cloud or on-premises deployments.
+- Azure Queues: A messaging store for reliable messaging between application components.
+- Azure Disks: Block-level storage volumes for Azure VMs.
+- Azure Tables: NoSQL table option for structured, non-relational data.
+
+#### Benefits of Azure Storage
+
+
 
