@@ -856,3 +856,56 @@ Azure Disk storage, or Azure managed disks, are block-level storage volumes mana
 
 #### Azure Tables
 Azure Table storage stores large amounts of structured data. Azure tables are a NoSQL datastore that accepts authenticated calls from inside and outside the Azure cloud. This enables you to use Azure tables to build your hybrid or multi-cloud solution and have your data always available. Azure tables are ideal for storing structured, non-relational data.
+
+
+### Azure Migrate
+
+- Azure Migrate is a service that helps you migrate from an on-premises environment to the cloud. Azure Migrate functions as a hub to help you manage the assessment and migration of your on-premises datacenter to Azure. It provides the following:
+
+  - Unified migration platform: A single portal to start, run, and track your migration to Azure.
+  - Range of tools: A range of tools for assessment and migration. Azure Migrate tools include Azure Migrate: Discovery and assessment and Azure Migrate: Server Migration. Azure Migrate also integrates with other Azure services and tools, and with independent software vendor (ISV) offerings.
+  - Assessment and migration: In the Azure Migrate hub, you can assess and migrate your on-premises infrastructure to Azure.
+
+#### Integrated tools
+Azure Migrate hub also includes the following tools to help with migration:
+
+##### Azure Migrate: Discovery and assessment. 
+Discover and assess on-premises servers running on VMware, Hyper-V, and physical servers in preparation for migration to Azure.
+##### Azure Migrate: Server Migration.
+Migrate VMware VMs, Hyper-V VMs, physical servers, other virtualized servers, and public cloud VMs to Azure.
+##### Data Migration Assistant. 
+Data Migration Assistant is a stand-alone tool to assess SQL Servers. It helps pinpoint potential problems blocking migration. It identifies unsupported features, new features that can benefit you after migration, and the right path for database migration.
+##### Azure Database Migration Service. 
+Migrate on-premises databases to Azure VMs running SQL Server, Azure SQL Database, or SQL Managed Instances.
+##### Web app migration assistant. 
+Azure App Service Migration Assistant is a standalone tool to assess on-premises websites for migration to Azure App Service. Use Migration Assistant to migrate .NET and PHP web apps to Azure.
+##### Azure Data Box. 
+Use Azure Data Box products to move large amounts of offline data to Azure.
+
+#### Azure Data Box
+Azure Data Box is a physical migration service that helps transfer large amounts of data in a quick, inexpensive, and reliable way. The secure data transfer is accelerated by shipping you a proprietary Data Box storage device that has a maximum usable storage capacity of 80 terabytes. The Data Box is transported to and from your datacenter via a regional carrier. A rugged case protects and secures the Data Box from damage during transit.
+
+#### Use cases
+Data Box is ideally suited to transfer data sizes larger than 40 TBs in scenarios with no to limited network connectivity. The data movement can be one-time, periodic, or an initial bulk data transfer followed by periodic transfers.
+
+Here are the various scenarios where Data Box can be used to import data to Azure.
+
+- Onetime migration - when a large amount of on-premises data is moved to Azure.
+- Moving a media library from offline tapes into Azure to create an online media library.
+- Migrating your VM farm, SQL server, and applications to Azure.
+- Moving historical data to Azure for in-depth analysis and reporting using HDInsight.
+- Initial bulk transfer - when an initial bulk transfer is done using Data Box (seed) followed by incremental transfers over the network.
+- Periodic uploads - when large amount of data is generated periodically and needs to be moved to Azure.
+Here are the various scenarios where Data Box can be used to export data from Azure.
+
+- Disaster recovery - when a copy of the data from Azure is restored to an on-premises network. In a typical disaster recovery scenario, a large amount of Azure data is exported to a Data Box. Microsoft then ships this Data Box, and the data is restored on your premises in a short time.
+- Security requirements - when you need to be able to export data out of Azure due to government or security requirements.
+- Migrate back to on-premises or to another cloud service provider - when you want to move all the data back to on-premises, or to another cloud service provider, export data via Data Box to migrate the workloads.
+Once the data from your import order is uploaded to Azure, the disks on the device are wiped clean in accordance with NIST 800-88r1 standards. For an export order, the disks are erased once the device reaches the Azure datacenter.
+
+#### AzCopy
+AzCopy is a command-line utility that you can use to copy blobs or files to or from your storage account. With AzCopy, you can upload files, download files, copy files between storage accounts, and even synchronize files. AzCopy can even be configured to work with other cloud providers to help move files back and forth between clouds.
+
+#### Azure Storage Explorer
+Azure Storage Explorer is a standalone app that provides a graphical interface to manage files and blobs in your Azure Storage Account. It works on Windows, macOS, and Linux operating systems and uses AzCopy on the backend to perform all of the file and blob management tasks. With Storage Explorer, you can upload to Azure, download from Azure, or move between storage accounts.
+
