@@ -909,3 +909,168 @@ AzCopy is a command-line utility that you can use to copy blobs or files to or f
 #### Azure Storage Explorer
 Azure Storage Explorer is a standalone app that provides a graphical interface to manage files and blobs in your Azure Storage Account. It works on Windows, macOS, and Linux operating systems and uses AzCopy on the backend to perform all of the file and blob management tasks. With Storage Explorer, you can upload to Azure, download from Azure, or move between storage accounts.
 
+#### Azure File Sync
+Azure File Sync is a tool that lets you centralize your file shares in Azure Files and keep the flexibility, performance, and compatibility of a Windows file server. It’s almost like turning your Windows file server into a miniature content delivery network. Once you install Azure File Sync on your local Windows server, it will automatically stay bi-directionally synced with your files in Azure.
+
+With Azure File Sync, you can:
+
+- Use any protocol that's available on Windows Server to access your data locally, including SMB, NFS, and FTPS.
+- Have as many caches as you need across the world.
+- Replace a failed local server by installing Azure File Sync on a new server in the same datacenter.
+- Configure cloud tiering so the most frequently accessed files are replicated locally, while infrequently accessed files are kept in the cloud until requested.
+
+### Describe Azure identity, access, and security
+
+Azure Active Directory (Azure AD) is a directory service that enables you to sign in and access both Microsoft cloud applications and cloud applications that you develop. Azure AD can also help you maintain your on-premises Active Directory deployment.
+
+For on-premises environments, Active Directory running on Windows Server provides an identity and access management service that's managed by your organization. Azure AD is Microsoft's cloud-based identity and access management service. With Azure AD, you control the identity accounts, but Microsoft ensures that the service is available globally. If you've worked with Active Directory, Azure AD will be familiar to you.
+
+When you secure identities on-premises with Active Directory, Microsoft doesn't monitor sign-in attempts. When you connect Active Directory with Azure AD, Microsoft can help protect you by detecting suspicious sign-in attempts at no extra cost. For example, Azure AD can detect sign-in attempts from unexpected locations or unknown devices.
+
+##### Who uses Azure AD?
+Azure AD is for:
+
+- IT administrators. Administrators can use Azure AD to control access to applications and resources based on their business requirements.
+- App developers. Developers can use Azure AD to provide a standards-based approach for adding functionality to applications that they build, such as adding SSO functionality to an app or enabling an app to work with a user's existing credentials.
+- Users. Users can manage their identities and take maintenance actions like self-service password reset.
+- Online service subscribers. Microsoft 365, Microsoft Office 365, Azure, and Microsoft Dynamics CRM Online subscribers are already using Azure AD to authenticate into their account.
+
+#### Can I connect my on-premises AD with Azure AD?
+If you had an on-premises environment running Active Directory and a cloud deployment using Azure AD, you would need to maintain two identity sets. However, you can connect Active Directory with Azure AD, enabling a consistent identity experience between cloud and on-premises.
+
+One method of connecting Azure AD with your on-premises AD is using Azure AD Connect. Azure AD Connect synchronizes user identities between on-premises Active Directory and Azure AD. Azure AD Connect synchronizes changes between both identity systems, so you can use features like SSO, multifactor authentication, and self-service password reset under both systems.
+
+#### What is Azure Active Directory Domain Services?
+
+Azure Active Directory Domain Services (Azure AD DS) is a service that provides managed domain services such as domain join, group policy, lightweight directory access protocol (LDAP), and Kerberos/NTLM authentication. Just like Azure AD lets you use directory services without having to maintain the infrastructure supporting it, with Azure AD DS, you get the benefit of domain services without the need to deploy, manage, and patch domain controllers (DCs) in the cloud.
+
+Azure AD DS integrates with your existing Azure AD tenant. This integration lets users sign into services and applications connected to the managed domain using their existing credentials. You can also use existing groups and user accounts to secure access to resources. 
+
+#### How does Azure AD DS work?
+When you create an Azure AD DS managed domain, you define a unique namespace. This namespace is the domain name. Two Windows Server domain controllers are then deployed into your selected Azure region. This deployment of DCs is known as a replica set.
+
+#### Is information synchronized?
+
+A managed domain is configured to perform a one-way synchronization from Azure AD to Azure AD DS. You can create resources directly in the managed domain, but they aren't synchronized back to Azure AD. In a hybrid environment with an on-premises AD DS environment, Azure AD Connect synchronizes identity information with Azure AD, which is then synchronized to the managed domain.
+
+![image](https://github.com/JosephSabo/AZ-900studyNotes/assets/47758130/818924ca-0fe0-432c-9d55-b053a4f91869)
+
+Applications, services, and VMs in Azure that connect to the managed domain can then use common Azure AD DS features such as domain join, group policy, LDAP, and Kerberos/NTLM authentication.
+
+#### What's single sign-on?
+Single sign-on (SSO) enables a user to sign in one time and use that credential to access multiple resources and applications from different providers. For SSO to work, the different applications and providers must trust the initial authenticator.
+
+With SSO, you need to remember only one ID and one password. Access across applications is granted to a single identity that's tied to the user, which simplifies the security model. As users change roles or leave an organization, access is tied to a single identity. This change greatly reduces the effort needed to change or disable accounts. Using SSO for accounts makes it easier for users to manage their identities and for IT to manage users.
+
+#### What’s Multifactor Authentication?
+Multifactor authentication is the process of prompting a user for an extra form (or factor) of identification during the sign-in process. MFA helps protect against a password compromise in situations where the password was compromised but the second factor wasn't.
+
+Multifactor authentication provides additional security for your identities by requiring two or more elements to fully authenticate. These elements fall into three categories:
+
+- Something the user knows – this might be a challenge question.
+- Something the user has – this might be a code that's sent to the user's mobile phone.
+- Something the user is – this is typically some sort of biometric property, such as a fingerprint or face scan.
+
+#### What’s passwordless authentication?
+Features like MFA are a great way to secure your organization, but users often get frustrated with the additional security layer on top of having to remember their passwords. People are more likely to comply when it's easy and convenient to do so. Passwordless authentication methods are more convenient because the password is removed and replaced with something you have, plus something you are, or something you know.
+
+Each organization has different needs when it comes to authentication. Microsoft global Azure and Azure Government offer the following three passwordless authentication options that integrate with Azure Active Directory (Azure AD):
+
+- Windows Hello for Business
+- Microsoft Authenticator app
+- FIDO2 security keys
+
+#### Windows Hello for Business
+Windows Hello for Business is ideal for information workers that have their own designated Windows PC. The biometric and PIN credentials are directly tied to the user's PC, which prevents access from anyone other than the owner. With public key infrastructure (PKI) integration and built-in support for single sign-on (SSO), Windows Hello for Business provides a convenient method for seamlessly accessing corporate resources on-premises and in the cloud.
+
+#### Microsoft Authenticator App
+You can also allow your employee's phone to become a passwordless authentication method. You may already be using the Microsoft Authenticator App as a convenient multi-factor authentication option in addition to a password. You can also use the Authenticator App as a passwordless option.
+
+The Authenticator App turns any iOS or Android phone into a strong, passwordless credential. Users can sign-in to any platform or browser by getting a notification to their phone, matching a number displayed on the screen to the one on their phone, and then using their biometric (touch or face) or PIN to confirm. Refer to Download and install the Microsoft Authenticator app for installation details.
+
+#### FIDO2 security keys
+The FIDO (Fast IDentity Online) Alliance helps to promote open authentication standards and reduce the use of passwords as a form of authentication. FIDO2 is the latest standard that incorporates the web authentication (WebAuthn) standard.
+
+FIDO2 security keys are an unphishable standards-based passwordless authentication method that can come in any form factor. Fast Identity Online (FIDO) is an open standard for passwordless authentication. FIDO allows users and organizations to leverage the standard to sign-in to their resources without a username or password by using an external security key or a platform key built into a device.
+
+Users can register and then select a FIDO2 security key at the sign-in interface as their main means of authentication. These FIDO2 security keys are typically USB devices, but could also use Bluetooth or NFC. With a hardware device that handles the authentication, the security of an account is increased as there's no password that could be exposed or guessed.
+
+#### Describe Azure external identities
+
+An external identity is a person, device, service, etc. that is outside your organization. Azure AD External Identities refers to all the ways you can securely interact with users outside of your organization. If you want to collaborate with partners, distributors, suppliers, or vendors, you can share your resources and define how your internal users can access external organizations. If you're a developer creating consumer-facing apps, you can manage your customers' identity experiences.
+
+![image](https://github.com/JosephSabo/AZ-900studyNotes/assets/47758130/2dd1a4b9-f994-4c00-98bf-9e46abcbae9d)
+
+The following capabilities make up External Identities:
+
+- Business to business (B2B) collaboration - Collaborate with external users by letting them use their preferred identity to sign-in to your Microsoft applications or other enterprise applications (SaaS apps, custom-developed apps, etc.). B2B collaboration users are represented in your directory, typically as guest users.
+- B2B direct connect - Establish a mutual, two-way trust with another Azure AD organization for seamless collaboration. B2B direct connect currently supports Teams shared channels, enabling external users to access your resources from within their home instances of Teams. B2B direct connect users aren't represented in your directory, but they're visible from within the Teams shared channel and can be monitored in Teams admin center reports.
+- Azure AD business to customer (B2C) - Publish modern SaaS apps or custom-developed apps (excluding Microsoft apps) to consumers and customers, while using Azure AD B2C for identity and access management.
+
+#### Describe Azure conditional access
+
+Conditional Access is a tool that Azure Active Directory uses to allow (or deny) access to resources based on identity signals. These signals include who the user is, where the user is, and what device the user is requesting access from.
+
+Conditional Access helps IT administrators:
+
+- Empower users to be productive wherever and whenever.
+- Protect the organization's assets.
+
+During sign-in, Conditional Access collects signals from the user, makes decisions based on those signals, and then enforces that decision by allowing or denying the access request or challenging for a multifactor authentication response.
+
+![image](https://github.com/JosephSabo/AZ-900studyNotes/assets/47758130/bef06f9e-9851-4357-8126-6f2d38fc640f)
+
+Here, the signal might be the user's location, the user's device, or the application that the user is trying to access.
+
+Based on these signals, the decision might be to allow full access if the user is signing in from their usual location. If the user is signing in from an unusual location or a location that's marked as high risk, then access might be blocked entirely or possibly granted after the user provides a second form of authentication.
+
+Enforcement is the action that carries out the decision. For example, the action is to allow access or require the user to provide a second form of authentication.
+
+#### When can I use Conditional Access?
+Conditional Access is useful when you need to:
+
+- Require multifactor authentication (MFA) to access an application depending on the requester’s role, location, or network. For example, you could require MFA for administrators but not regular users or for people connecting from outside your corporate network.
+- Require access to services only through approved client applications. For example, you could limit which email applications are able to connect to your email service.
+- Require users to access your application only from managed devices. A managed device is a device that meets your standards for security and compliance.
+- Block access from untrusted sources, such as access from unknown or unexpected locations.
+
+#### Describe Azure role-based access control
+Azure provides built-in roles that describe common access rules for cloud resources. You can also define your own roles. Each role has an associated set of access permissions that relate to that role. When you assign individuals or groups to one or more roles, they receive all the associated access permissions.
+
+#### How is role-based access control applied to resources?
+Role-based access control is applied to a scope, which is a resource or set of resources that this access applies to.
+
+![image](https://github.com/JosephSabo/AZ-900studyNotes/assets/47758130/1da89709-2a88-4ae1-a95a-3c7de72b1e5d)
+
+Scopes include:
+
+- A management group (a collection of multiple subscriptions).
+- A single subscription.
+- A resource group.
+- A single resource.
+
+Azure RBAC is hierarchical, in that when you grant access at a parent scope, those permissions are inherited by all child scopes. For example:
+
+- When you assign the Owner role to a user at the management group scope, that user can manage everything in all subscriptions within the management group.
+- When you assign the Reader role to a group at the subscription scope, the members of that group can view every resource group and resource within the subscription.
+
+#### Describe zero trust model
+
+Zero Trust is a security model that assumes the worst case scenario and protects resources with that expectation. Zero Trust assumes breach at the outset, and then verifies each request as though it originated from an uncontrolled network.
+
+To address this new world of computing, Microsoft highly recommends the Zero Trust security model, which is based on these guiding principles:
+
+- Verify explicitly - Always authenticate and authorize based on all available data points.
+- Use least privilege access - Limit user access with Just-In-Time and Just-Enough-Access (JIT/JEA), risk-based adaptive policies, and data protection.
+- Assume breach - Minimize blast radius and segment access. Verify end-to-end encryption. Use analytics to get visibility, drive threat detection, and improve defenses.
+
+#### Adjusting to Zero Trust
+
+The Zero Trust model flips that scenario. Instead of assuming that a device is safe because it’s within the corporate network, it requires everyone to authenticate. Then grants access based on authentication rather than location.
+
+![image](https://github.com/JosephSabo/AZ-900studyNotes/assets/47758130/0c9e2287-84cb-4894-afd5-bbef56979d63)
+
+
+
+
+
