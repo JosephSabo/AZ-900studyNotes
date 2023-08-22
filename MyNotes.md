@@ -1128,5 +1128,59 @@ Defender for Cloud fills three vital needs as you manage the security of your re
 ###### - Secure – Harden resources and services with Azure Security Benchmark.
 ###### - Defend – Detect and resolve threats to resources, workloads, and services.
 
+## Microsoft Azure Fundamentals: Describe Azure management and governance (module 3)
+
+##### Describe factors that can affect costs in Azure
+Azure shifts development costs from the capital expense (CapEx) of building out and maintaining infrastructure and facilities to an operational expense (OpEx) of renting infrastructure as you need it, whether it’s compute, storage, networking, and so on.
+
+That OpEx cost can be impacted by many factors. Some of the impacting factors are:
+
+Resource type
+Consumption
+Maintenance
+Geography
+Subscription type
+Azure Marketplace
+
+#### Compare the Pricing and Total Cost of Ownership calculators
+
+##### Pricing calculator
+The pricing calculator is designed to give you an estimated cost for provisioning resources in Azure. You can get an estimate for individual resources, build out a solution, or use an example scenario to see an estimate of the Azure spend. The pricing calculator’s focus is on the cost of provisioned resources in Azure.
+With the pricing calculator, you can estimate the cost of any provisioned resources, including compute, storage, and associated network costs. You can even account for different storage options like storage type, access tier, and redundancy.
+
+https://azure.microsoft.com/en-ca/pricing/calculator/?ef_id=_k_Cj0KCQjwuZGnBhD1ARIsACxbAVjf_dQXWls1j3ZuJIVJSGH_lIrrqj8uefxnbVmg0fzvconaAQS27AwaAruKEALw_wcB_k_&OCID=AIDcmmqz3gd78m_SEM__k_Cj0KCQjwuZGnBhD1ARIsACxbAVjf_dQXWls1j3ZuJIVJSGH_lIrrqj8uefxnbVmg0fzvconaAQS27AwaAruKEALw_wcB_k_&gad=1&gclid=Cj0KCQjwuZGnBhD1ARIsACxbAVjf_dQXWls1j3ZuJIVJSGH_lIrrqj8uefxnbVmg0fzvconaAQS27AwaAruKEALw_wcB
+
+##### TCO calculator
+The TCO calculator is designed to help you compare the costs for running an on-premises infrastructure compared to an Azure Cloud infrastructure. With the TCO calculator, you enter your current infrastructure configuration, including servers, databases, storage, and outbound network traffic. The TCO calculator then compares the anticipated costs for your current environment with an Azure environment supporting the same infrastructure requirements.
+
+With the TCO calculator, you enter your configuration, add in assumptions like power and IT labor costs, and are presented with an estimation of the cost difference to run the same environment in your current datacenter or in Azure.
+
+https://azure.microsoft.com/en-us/pricing/tco/calculator/
+
+##### What is Cost Management?
+Cost Management provides the ability to quickly check Azure resource costs, create alerts based on resource spend, and create budgets that can be used to automate management of resources.
+
+##### Describe the purpose of tags
+
+As your cloud usage grows, it's increasingly important to stay organized. A good organization strategy helps you understand your cloud usage and can help you manage costs.
+
+One way to organize related resources is to place them in their own subscriptions. You can also use resource groups to manage related resources. Resource tags are another way to organize resources. Tags provide extra information, or metadata, about your resources. This metadata is useful for:
+
+- Resource management Tags enable you to locate and act on resources that are associated with specific workloads, environments, business units, and owners.
+- Cost management and optimization Tags enable you to group resources so that you can report on costs, allocate internal cost centers, track budgets, and forecast estimated cost.
+- Operations management Tags enable you to group resources according to how critical their availability is to your business. This grouping helps you formulate service-level agreements (SLAs). An SLA is an uptime or performance guarantee between you and your users.
+- Security Tags enable you to classify data by its security level, such as public or confidential.
+- Governance and regulatory compliance Tags enable you to identify resources that align with governance or regulatory compliance requirements, such as ISO 27001. Tags can also be part of your standards enforcement efforts. For example, you might require that all resources be tagged with an owner or department name.
+- Workload optimization and automation Tags can help you visualize all of the resources that participate in complex deployments. For example, you might tag a resource with its associated workload or application name and use software such as Azure DevOps to perform automated tasks on those resources.
+
+##### How do I manage resource tags?
+You can add, modify, or delete resource tags through Windows PowerShell, the Azure CLI, Azure Resource Manager templates, the REST API, or the Azure portal.
+
+You can use Azure Policy to enforce tagging rules and conventions. For example, you can require that certain tags be added to new resources as they're provisioned. You can also define rules that reapply tags that have been removed. Resources don't inherit tags from subscriptions and resource groups, meaning that you can apply tags at one level and not have those tags automatically show up at a different level, allowing you to create custom tagging schemas that change depending on the level (resource, resource group, subscription, and so on).
+
+##### An example tagging structure
+A resource tag consists of a name and a value. You can assign one or more tags to each Azure resource.
+
+![image](https://github.com/JosephSabo/AZ-900studyNotes/assets/47758130/2a741a5e-5654-45ce-a3be-f63d4ee9a326)
 
 
