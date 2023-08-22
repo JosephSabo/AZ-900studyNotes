@@ -1070,7 +1070,63 @@ The Zero Trust model flips that scenario. Instead of assuming that a device is s
 
 ![image](https://github.com/JosephSabo/AZ-900studyNotes/assets/47758130/0c9e2287-84cb-4894-afd5-bbef56979d63)
 
+#### Describe defense-in-depth
 
+The objective of defense-in-depth is to protect information and prevent it from being stolen by those who aren't authorized to access it.
+
+A defense-in-depth strategy uses a series of mechanisms to slow the advance of an attack that aims at acquiring unauthorized access to data.
+
+Layers of defense-in-depth
+
+![image](https://github.com/JosephSabo/AZ-900studyNotes/assets/47758130/4b1cfa04-d1b7-48f6-afc9-1ae6beda17fe)
+
+Each layer provides protection so that if one layer is breached, a subsequent layer is already in place to prevent further exposure.
+Here's a brief overview of the role of each layer:
+
+- The physical security layer is the first line of defense to protect computing hardware in the datacenter.
+- The identity and access layer controls access to infrastructure and change control.
+- The perimeter layer uses distributed denial of service (DDoS) protection to filter large-scale attacks before they can cause a denial of service for users.
+- The network layer limits communication between resources through segmentation and access controls.
+- The compute layer secures access to virtual machines.
+- The application layer helps ensure that applications are secure and free of security vulnerabilities.
+- The data layer controls access to business and customer data that you need to protect.
+
+#### Describe Microsoft Defender for Cloud
+
+Defender for Cloud is a monitoring tool for security posture management and threat protection. It monitors your cloud, on-premises, hybrid, and multi-cloud environments to provide guidance and notifications aimed at strengthening your security posture.
+
+Defender for Cloud provides the tools needed to harden your resources, track your security posture, protect against cyber attacks, and streamline security management. Deployment of Defender for Cloud is easy, it’s already natively integrated to Azure.
+
+##### Protection everywhere you’re deployed
+Because Defender for Cloud is an Azure-native service, many Azure services are monitored and protected without needing any deployment. However, if you also have an on-premises datacenter or are also operating in another cloud environment, monitoring of Azure services may not give you a complete picture of your security situation.
+
+When necessary, Defender for Cloud can automatically deploy a Log Analytics agent to gather security-related data. For Azure machines, deployment is handled directly. For hybrid and multi-cloud environments, Microsoft Defender plans are extended to non Azure machines with the help of Azure Arc. Cloud security posture management (CSPM) features are extended to multi-cloud machines without the need for any agents.
+
+##### Azure-native protections
+Defender for Cloud helps you detect threats across:
+
+- Azure PaaS services – Detect threats targeting Azure services including Azure App Service, Azure SQL, Azure Storage Account, and more data services. You can also perform anomaly detection on your Azure activity logs using the native integration with Microsoft Defender for Cloud Apps (formerly known as Microsoft Cloud App Security).
+- Azure data services – Defender for Cloud includes capabilities that help you automatically classify your data in Azure SQL. You can also get assessments for potential vulnerabilities across Azure SQL and Storage services, and recommendations for how to mitigate them.
+- Networks – Defender for Cloud helps you limit exposure to brute force attacks. By reducing access to virtual machine ports, using the just-in-time VM access, you can harden your network by preventing unnecessary access. You can set secure access policies on selected ports, for only authorized users, allowed source IP address ranges or IP addresses, and for a limited amount of time.
+
+##### Defend your hybrid resources
+To extend protection to on-premises machines, deploy Azure Arc and enable Defender for Cloud's enhanced security features.
+
+##### Defend resources running on other clouds
+Defender for Cloud can also protect resources in other clouds (such as AWS and GCP).
+
+For example, if you've connected an Amazon Web Services (AWS) account to an Azure subscription, you can enable any of these protections:
+
+- Defender for Cloud's CSPM features extend to your AWS resources. This agentless plan assesses your AWS resources according to AWS-specific security recommendations, and includes the results in the secure score. The resources will also be assessed for compliance with built-in standards specific to AWS (AWS CIS, AWS PCI DSS, and AWS Foundational Security Best Practices). Defender for Cloud's asset inventory page is a multi-cloud enabled feature helping you manage your AWS resources alongside your Azure resources.
+- Microsoft Defender for Containers extends its container threat detection and advanced defenses to your Amazon EKS Linux clusters.
+- Microsoft Defender for Servers brings threat detection and advanced defenses to your Windows and Linux EC2 instances.
+
+#### Assess, Secure, and Defend
+Defender for Cloud fills three vital needs as you manage the security of your resources and workloads in the cloud and on-premises:
+
+###### - Continuously assess – Know your security posture. Identify and track vulnerabilities.
+###### - Secure – Harden resources and services with Azure Security Benchmark.
+###### - Defend – Detect and resolve threats to resources, workloads, and services.
 
 
 
